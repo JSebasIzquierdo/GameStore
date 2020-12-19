@@ -1,0 +1,31 @@
+class SearchBar extends Component {
+    constructor(props) {
+        super(props)
+        
+        this.state = {
+            loading: false,
+            characters: [],
+            url: 'https://gateway.marvel.com:443/v1/public/characters?ts=1&apikey=6764e5b078774bfcbe5383bb43db709a&hash=c0099979fa4091e39f693eaee61270a6'
+        }
+    }
+
+    componentDidMount() {
+        this.getCharacter();
+    }
+
+    getCharacter = () => {
+        this.setState({ loading: true })
+        fetch(this.state.url)
+            .then(response => response.json())
+            .then((responseJson) => {
+                this.setState({
+                    characters: responseJson.results
+                })
+            })
+    }
+
+   
+
+    }
+
+export default SearchBar;

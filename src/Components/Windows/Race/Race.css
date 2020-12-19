@@ -1,0 +1,11 @@
+.o-container-cards {
+  min-height: 100vh;
+  width: 100%;
+  margin: auto;
+  padding: 8em 2em;
+  display: grid;
+  justify-content: center;
+  align-content: start;
+  grid-gap: 1.6em;
+  grid-template: auto / repeat(auto-fill, minmax(27em, 27em));
+}
